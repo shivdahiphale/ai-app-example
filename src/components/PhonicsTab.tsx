@@ -28,11 +28,13 @@ export function PhonicsTab({ phonics, loading, learned, recordProgress }: Props)
 
   const playPhonic = async (p: Phonic) => {
     setSelected(p.id);
-    const text = `${p.letter}. ${p.sound}. ${p.example_word}.`;
-    await speak(text, undefined, () => {
-      setShowPow(true);
-      setTimeout(() => setShowPow(false), 800);
-    });
+    await speak(`${p.letter}.`, undefined);
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+    await speak(`${p.sound}.`, undefined);
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+    await speak(`${p.example_word}.`, undefined);
+    setShowPow(true);
+    setTimeout(() => setShowPow(false), 800);
     if (!learned.includes(p.id)) {
       recordProgress("phonic", p.id);
     }
