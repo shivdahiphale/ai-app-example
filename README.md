@@ -54,4 +54,8 @@ Each item needs a stable string `id` (used for progress tracking).
 
 Point your host (e.g. **Vercel**) at the **repository root** — `package.json`, `next.config.ts`, and `src/` must be at the project root so `next build` runs correctly.
 
+Next.js (App Router) does **not** use a root `index.ts` file. The app entry is **`src/app/page.tsx`** (and `layout.tsx`). A missing `index.ts` is **not** a deployment error by itself.
+
 `/api/tts` needs a **Node** runtime. **Static export** (`output: 'export'`) is not compatible with this API route unless you host TTS elsewhere.
+
+**TTS:** If `ELEVENLABS_API_KEY` is unset, the app uses the browser’s **Web Speech API** only and does not call ElevenLabs. Set the key in the host’s environment variables to enable server-side TTS.
