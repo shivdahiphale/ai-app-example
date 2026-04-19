@@ -1,0 +1,184 @@
+[
+  {
+    "id": "phonic-A",
+    "letter": "A",
+    "sound": "aah",
+    "example_word": "Apple",
+    "color": "#E53935"
+  },
+  {
+    "id": "phonic-B",
+    "letter": "B",
+    "sound": "buh",
+    "example_word": "Ball",
+    "color": "#2962FF"
+  },
+  {
+    "id": "phonic-C",
+    "letter": "C",
+    "sound": "kuh",
+    "example_word": "Cat",
+    "color": "#FFEB3B"
+  },
+  {
+    "id": "phonic-D",
+    "letter": "D",
+    "sound": "duh",
+    "example_word": "Dog",
+    "color": "#00E676"
+  },
+  {
+    "id": "phonic-E",
+    "letter": "E",
+    "sound": "eh",
+    "example_word": "Egg",
+    "color": "#FF6F00"
+  },
+  {
+    "id": "phonic-F",
+    "letter": "F",
+    "sound": "fuh",
+    "example_word": "Fish",
+    "color": "#E53935"
+  },
+  {
+    "id": "phonic-G",
+    "letter": "G",
+    "sound": "guh",
+    "example_word": "Goat",
+    "color": "#2962FF"
+  },
+  {
+    "id": "phonic-H",
+    "letter": "H",
+    "sound": "huh",
+    "example_word": "Hat",
+    "color": "#FFEB3B"
+  },
+  {
+    "id": "phonic-I",
+    "letter": "I",
+    "sound": "ih",
+    "example_word": "Igloo",
+    "color": "#00BCD4"
+  },
+  {
+    "id": "phonic-J",
+    "letter": "J",
+    "sound": "juh",
+    "example_word": "Jug",
+    "color": "#9C27B0"
+  },
+  {
+    "id": "phonic-K",
+    "letter": "K",
+    "sound": "kuh",
+    "example_word": "Kite",
+    "color": "#E53935"
+  },
+  {
+    "id": "phonic-L",
+    "letter": "L",
+    "sound": "luh",
+    "example_word": "Lion",
+    "color": "#FFEB3B"
+  },
+  {
+    "id": "phonic-M",
+    "letter": "M",
+    "sound": "muh",
+    "example_word": "Moon",
+    "color": "#2962FF"
+  },
+  {
+    "id": "phonic-N",
+    "letter": "N",
+    "sound": "nuh",
+    "example_word": "Nest",
+    "color": "#00E676"
+  },
+  {
+    "id": "phonic-O",
+    "letter": "O",
+    "sound": "oh",
+    "example_word": "Octopus",
+    "color": "#FF6F00"
+  },
+  {
+    "id": "phonic-P",
+    "letter": "P",
+    "sound": "puh",
+    "example_word": "Pig",
+    "color": "#E53935"
+  },
+  {
+    "id": "phonic-Q",
+    "letter": "Q",
+    "sound": "kwuh",
+    "example_word": "Queen",
+    "color": "#9C27B0"
+  },
+  {
+    "id": "phonic-R",
+    "letter": "R",
+    "sound": "ruh",
+    "example_word": "Rabbit",
+    "color": "#2962FF"
+  },
+  {
+    "id": "phonic-S",
+    "letter": "S",
+    "sound": "suh",
+    "example_word": "Sun",
+    "color": "#FFEB3B"
+  },
+  {
+    "id": "phonic-T",
+    "letter": "T",
+    "sound": "tuh",
+    "example_word": "Tiger",
+    "color": "#00E676"
+  },
+  {
+    "id": "phonic-U",
+    "letter": "U",
+    "sound": "uh",
+    "example_word": "Umbrella",
+    "color": "#9C27B0"
+  },
+  {
+    "id": "phonic-V",
+    "letter": "V",
+    "sound": "vuh",
+    "example_word": "Van",
+    "color": "#E53935"
+  },
+  {
+    "id": "phonic-W",
+    "letter": "W",
+    "sound": "wuh",
+    "example_word": "Whale",
+    "color": "#2962FF"
+  },
+  {
+    "id": "phonic-X",
+    "letter": "X",
+    "sound": "ks",
+    "example_word": "Xylophone",
+    "color": "#FF6F00"
+  },
+  {
+    "id": "phonic-Y",
+    "letter": "Y",
+    "sound": "yuh",
+    "example_word": "Yak",
+    "color": "#FFEB3B"
+  },
+  {
+    "id": "phonic-Z",
+    "letter": "Z",
+    "sound": "zuh",
+    "example_word": "Zebra",
+    "color": "#00E676"
+  }
+]

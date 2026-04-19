@@ -1,0 +1,5 @@
+/* MUI CssBaseline handles resets; keep only app-level tweaks */
+
+html {
+  scroll-behavior: smooth;
+}

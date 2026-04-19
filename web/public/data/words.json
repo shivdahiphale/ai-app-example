@@ -1,0 +1,114 @@
+[
+  {
+    "id": "word-1",
+    "word": "Cat",
+    "meaning": "A small furry pet that says meow",
+    "emoji": "🐱",
+    "category": "animals"
+  },
+  {
+    "id": "word-2",
+    "word": "Dog",
+    "meaning": "A friendly pet that barks and wags its tail",
+    "emoji": "🐶",
+    "category": "animals"
+  },
+  {
+    "id": "word-3",
+    "word": "Sun",
+    "meaning": "The bright star that gives us light and warmth",
+    "emoji": "☀️",
+    "category": "nature"
+  },
+  {
+    "id": "word-4",
+    "word": "Moon",
+    "meaning": "The round light in the night sky",
+    "emoji": "🌙",
+    "category": "nature"
+  },
+  {
+    "id": "word-5",
+    "word": "Star",
+    "meaning": "Tiny twinkling lights in the sky at night",
+    "emoji": "⭐",
+    "category": "nature"
+  },
+  {
+    "id": "word-6",
+    "word": "Apple",
+    "meaning": "A round red or green fruit that is sweet",
+    "emoji": "🍎",
+    "category": "food"
+  },
+  {
+    "id": "word-7",
+    "word": "Ball",
+    "meaning": "A round toy you can bounce, throw, or kick",
+    "emoji": "⚽",
+    "category": "toys"
+  },
+  {
+    "id": "word-8",
+    "word": "Book",
+    "meaning": "Pages with stories and pictures to read",
+    "emoji": "📚",
+    "category": "school"
+  },
+  {
+    "id": "word-9",
+    "word": "Fish",
+    "meaning": "An animal that swims in water",
+    "emoji": "🐠",
+    "category": "animals"
+  },
+  {
+    "id": "word-10",
+    "word": "Bird",
+    "meaning": "An animal with wings that can fly",
+    "emoji": "🐦",
+    "category": "animals"
+  },
+  {
+    "id": "word-11",
+    "word": "Tree",
+    "meaning": "A tall plant with leaves and branches",
+    "emoji": "🌳",
+    "category": "nature"
+  },
+  {
+    "id": "word-12",
+    "word": "Car",
+    "meaning": "A vehicle with four wheels that people drive",
+    "emoji": "🚗",
+    "category": "vehicles"
+  },
+  {
+    "id": "word-13",
+    "word": "Hat",
+    "meaning": "Something you wear on your head",
+    "emoji": "🎩",
+    "category": "clothes"
+  },
+  {
+    "id": "word-14",
+    "word": "Hero",
+    "meaning": "A brave person who helps and saves others",
+    "emoji": "🦸",
+    "category": "people"
+  },
+  {
+    "id": "word-15",
+    "word": "Milk",
+    "meaning": "A white drink that helps you grow strong",
+    "emoji": "🥛",
+    "category": "food"
+  },
+  {
+    "id": "word-16",
+    "word": "Train",
+    "meaning": "A long vehicle that runs on tracks",
+    "emoji": "🚂",
+    "category": "vehicles"
+  }
+]

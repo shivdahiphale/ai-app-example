@@ -1,110 +1,57 @@
 # Hero Phonics
 
-English-learning web app for young learners: **phonics**, **vocabulary**, and **stories** with tap-to-hear TTS, progress stars, and an **admin** area for managing content. The UI uses a comic-book, neo-brutalist style (React + Tailwind).
+Single **Next.js** app for young learners: phonics grid, vocabulary cards, and clickable-word stories with **text-to-speech** (ElevenLabs). Comic-book UI (Tailwind CSS v4). **No login** — progress (stars and completed items) is stored in **localStorage**. Curriculum lives in **JSON** under `web/public/data/`.
 
 ## Stack
 
-| Layer | Technology |
-| --- | --- |
-| Frontend | React 18, Create React App, React Router, Tailwind CSS 3, Radix UI, Axios |
-| Backend | FastAPI, Motor (async MongoDB), JWT (python-jose), bcrypt |
-| Data | MongoDB (`users`, `phonics`, `words`, `stories`) |
-| Speech | OpenAI TTS (`https://api.openai.com/v1/audio/speech`, requires `OPENAI_API_KEY`) |
-
-On first startup the API **seeds** demo users, A–Z phonics, starter words, and stories if the database collections are empty.
+- **Next.js 16** (App Router), React 19, TypeScript
+- **Tailwind CSS v4**
+- **ElevenLabs** via `POST /api/tts` (API key stays on the server)
 
 ## Prerequisites
 
-- **Python** 3.11+ (matches tested environment)
-- **Node.js** 18+ and **Yarn** or npm (repo includes `frontend/yarn.lock`)
-- **MongoDB** reachable from your machine (e.g. [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) or local `mongod`)
+- **Node.js** 20+ (LTS recommended)
 
-## 1. Backend
-
-From the repo root:
+## Run locally
 
 ```bash
-cd backend
-python3 -m venv .venv
-source .venv/bin/activate   # Windows: .venv\Scripts\activate
-pip install -r requirements.txt
+cd web
+cp .env.example .env.local
 ```
 
-Create `backend/.env` (do not commit real secrets) with at least:
-
-| Variable | Purpose |
-| --- | --- |
-| `MONGO_URL` | MongoDB connection string |
-| `DB_NAME` | Database name |
-| `JWT_SECRET` | Secret for signing access tokens |
-| `OPENAI_API_KEY` | OpenAI API key for TTS (`POST /api/tts`) |
-
-Optional:
-
-| Variable | Default |
-| --- | --- |
-| `JWT_ALGORITHM` | `HS256` |
-| `JWT_EXPIRE_MINUTES` | `10080` (7 days) |
-
-Start the API (listens on **port 8001**):
+Edit `.env.local`: set `ELEVENLABS_API_KEY` (and optionally `ELEVENLABS_VOICE_ID`). Without a key, TTS requests return 503 and the UI falls back to the browser’s speech synthesis when possible.
 
 ```bash
-python server.py
+npm install
+npm run dev
 ```
 
-Health check: `GET http://localhost:8001/api/health` → `{"status":"ok"}`.
+Open [http://localhost:3000](http://localhost:3000).
 
-### Backend tests
-
-With the server running and the same base URL the frontend uses:
+### Production build
 
 ```bash
-cd backend
-source .venv/bin/activate
-REACT_APP_BACKEND_URL=http://localhost:8001 pytest tests/ -q
+cd web
+npm run build
+npm start
 ```
 
-## 2. Frontend
+## Content
 
-```bash
-cd frontend
-yarn install    # or: npm install
-```
+Edit curriculum JSON (no rebuild required for `public/` in dev):
 
-Create `frontend/.env` (CRA reads `REACT_APP_*` at build/start time):
+- [`web/public/data/phonics.json`](web/public/data/phonics.json)
+- [`web/public/data/words.json`](web/public/data/words.json)
+- [`web/public/data/stories.json`](web/public/data/stories.json)
 
-```bash
-REACT_APP_BACKEND_URL=http://localhost:8001
-```
-
-Start the dev server (default **http://localhost:3000**):
-
-```bash
-yarn start      # or: npm start
-```
-
-Open the app in the browser, sign up or log in.
-
-## Demo accounts (seeded on first API start)
-
-If these users are not already in the database, they are created when the backend starts:
-
-| Role | Email | Password |
-| --- | --- | --- |
-| Admin | `admin@hero.com` | `admin123` |
-| Learner | `kid@hero.com` | `hero123` |
-
-Admins see an **ADMIN** button on the dashboard for CRUD on phonics, words, and stories.
+Each item needs a stable string `id` (used for progress tracking).
 
 ## Project layout
 
-- `backend/server.py` — FastAPI app, auth, CRUD, progress, TTS, seeding
-- `backend/tests/` — API tests (`requests` + pytest)
-- `frontend/src/` — pages (`Dashboard`, `PhonicsTab`, `WordsTab`, `StoriesTab`, `AdminPage`, `LoginPage`), `lib/api.js`, `lib/auth.jsx`, `lib/tts.js`
-- `memory/PRD.md` — product notes and feature list
+- [`web/src/app/`](web/src/app/) — `layout.tsx`, `page.tsx`, `globals.css`, `api/tts/route.ts`
+- [`web/src/components/`](web/src/components/) — dashboard, tabs, comic UI
+- [`web/src/hooks/useProgress.ts`](web/src/hooks/useProgress.ts) — localStorage progress
 
-## Troubleshooting
+## Deploy notes
 
-- **Frontend cannot reach API**: Confirm `REACT_APP_BACKEND_URL` has **no** trailing slash and matches the URL where `server.py` is listening (`http://localhost:8001`).
-- **TTS errors**: Set `OPENAI_API_KEY` with a valid [OpenAI API key](https://platform.openai.com/api-keys). The server calls OpenAI’s speech endpoint directly (`httpx`).
-- **MongoDB errors**: Check `MONGO_URL` and `DB_NAME`; ensure your IP is allowed if using Atlas.
+`/api/tts` needs a **Node** runtime (e.g. Vercel). **Static export** (`output: 'export'`) is not compatible with this API route unless you host TTS elsewhere.
