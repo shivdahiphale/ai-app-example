@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-family: "Nunito", sans-serif;
+  background-color: #fff4d2;
+  color: #0f172a;
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-hero {
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: 0.05em;
+}
+
+/* Halftone dot background */
+.halftone-bg {
+  background-image: radial-gradient(circle, #0f172a 1px, transparent 1.5px);
+  background-size: 22px 22px;
+  background-position: 0 0;
+  opacity: 0.06;
+}
+
+/* Pow burst animation */
+@keyframes pow {
+  0% {
+    transform: scale(0) rotate(-20deg);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2) rotate(5deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+.animate-pow {
+  animation: pow 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Wobble */
+@keyframes wobble {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-3deg);
+  }
+  75% {
+    transform: rotate(3deg);
+  }
+}
+.animate-wobble {
+  animation: wobble 0.4s ease-in-out;
+}
+
+/* Word highlight pulse */
+@keyframes wordPulse {
+  0% {
+    background-color: transparent;
+    transform: scale(1);
+  }
+  50% {
+    background-color: #ffeb3b;
+    transform: scale(1.15);
+  }
+  100% {
+    background-color: transparent;
+    transform: scale(1);
+  }
+}
+.word-speaking {
+  animation: wordPulse 0.7s ease-in-out;
+  color: #e53935;
+  font-weight: 900;
+}
+
+/* Hide scrollbar but keep functionality */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Comic button active press */
+.comic-press:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 0 #0f172a !important;
+}
