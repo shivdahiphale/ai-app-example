@@ -61,15 +61,11 @@ function StatCard({
       data-testid={`stat-${label.toLowerCase()}`}
     >
       <CardContent sx={{ py: 1.5, px: 1.5, "&:last-child": { pb: 1.5 } }}>
-        <Stack
-          direction="row"
-          spacing={1}
-          sx={{ justifyContent: "space-between", alignItems: "center" }}
-        >
-          <Typography variant="caption" fontWeight={800} sx={{ color }} noWrap>
+        <Stack sx={{ flexDirection: "row", gap: 1, justifyContent: "space-between", alignItems: "center" }}>
+          <Typography variant="caption" noWrap sx={{ fontWeight: 800, color }}>
             {label}
           </Typography>
-          <Typography variant="caption" fontWeight={800} color="text.primary">
+          <Typography variant="caption" color="text.primary" sx={{ fontWeight: 800 }}>
             {value}/{total}
           </Typography>
         </Stack>
@@ -153,7 +149,7 @@ export function Dashboard() {
             <ShieldIcon sx={{ fontSize: 28, color: "common.white" }} />
           </Box>
           <Box sx={{ flexGrow: 1, minWidth: 0 }}>
-            <Typography variant="h6" component="div" color="inherit" fontFamily="var(--font-display)" noWrap>
+            <Typography variant="h6" component="div" color="inherit" noWrap sx={{ fontFamily: "var(--font-display)" }}>
               Hero Phonics
             </Typography>
             <Typography variant="caption" color="inherit" sx={{ opacity: 0.9 }} noWrap>
@@ -178,7 +174,7 @@ export function Dashboard() {
       </AppBar>
 
       <Container maxWidth="lg" sx={{ flex: 1, py: 2, px: { xs: 2, sm: 3 } }}>
-        <Stack direction="row" spacing={1} sx={{ mb: 2 }}>
+        <Stack sx={{ flexDirection: "row", gap: 1, mb: 2 }}>
           <StatCard
             label="Phonics"
             value={progress.phonics_learned.length}

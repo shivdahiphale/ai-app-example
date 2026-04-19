@@ -40,7 +40,7 @@ export function PhonicsTab({ phonics, loading, learned, recordProgress }: Props)
 
   if (loading) {
     return (
-      <Box display="flex" justifyContent="center" alignItems="center" minHeight={240}>
+      <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", minHeight: 240 }}>
         <CircularProgress size={48} color="primary" />
       </Box>
     );
@@ -113,9 +113,12 @@ export function PhonicsTab({ phonics, loading, learned, recordProgress }: Props)
                 <Typography
                   variant="h3"
                   component="span"
-                  fontFamily="var(--font-display)"
-                  fontWeight={800}
-                  sx={{ color: p.color, lineHeight: 1 }}
+                  sx={{
+                    fontFamily: "var(--font-display)",
+                    fontWeight: 800,
+                    color: p.color,
+                    lineHeight: 1,
+                  }}
                 >
                   {p.letter}
                 </Typography>
@@ -123,9 +126,8 @@ export function PhonicsTab({ phonics, loading, learned, recordProgress }: Props)
                   variant="caption"
                   color="text.secondary"
                   align="center"
-                  sx={{ mt: 0.5, fontWeight: 700, lineHeight: 1.2, px: 0.5 }}
                   noWrap
-                  width="100%"
+                  sx={{ mt: 0.5, fontWeight: 700, lineHeight: 1.2, px: 0.5, width: "100%" }}
                 >
                   {p.example_word}
                 </Typography>
@@ -138,7 +140,7 @@ export function PhonicsTab({ phonics, loading, learned, recordProgress }: Props)
       {selectedPhonic && (
         <Card variant="outlined" sx={{ mt: 3, borderRadius: 3, borderWidth: 2 }} data-testid="phonic-detail">
           <CardContent>
-            <Stack direction={{ xs: "column", sm: "row" }} spacing={2} alignItems={{ sm: "center" }}>
+            <Stack sx={{ flexDirection: { xs: "column", sm: "row" }, gap: 2, alignItems: { sm: "center" } }}>
               <Box
                 sx={{
                   width: { xs: "100%", sm: 100 },
@@ -155,15 +157,21 @@ export function PhonicsTab({ phonics, loading, learned, recordProgress }: Props)
               >
                 <Typography
                   variant="h2"
-                  fontFamily="var(--font-display)"
-                  fontWeight={800}
-                  sx={{ color: selectedPhonic.color }}
+                  sx={{
+                    fontFamily: "var(--font-display)",
+                    fontWeight: 800,
+                    color: selectedPhonic.color,
+                  }}
                 >
                   {selectedPhonic.letter}
                 </Typography>
               </Box>
-              <Box flex={1}>
-                <Typography variant="h5" fontFamily="var(--font-display)" gutterBottom fontWeight={800}>
+              <Box sx={{ flex: 1 }}>
+                <Typography
+                  variant="h5"
+                  gutterBottom
+                  sx={{ fontFamily: "var(--font-display)", fontWeight: 800 }}
+                >
                   {selectedPhonic.example_word}
                 </Typography>
                 <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
@@ -171,7 +179,7 @@ export function PhonicsTab({ phonics, loading, learned, recordProgress }: Props)
                 </Typography>
                 <Typography variant="body1" color="text.secondary">
                   Sounds like:{" "}
-                  <Box component="span" fontWeight={800} color="secondary.main">
+                  <Box component="span" sx={{ fontWeight: 800, color: "secondary.main" }}>
                     &quot;{selectedPhonic.sound}&quot;
                   </Box>
                 </Typography>

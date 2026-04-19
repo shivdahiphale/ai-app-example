@@ -54,7 +54,7 @@ export function StoriesTab({ stories, loading, read, recordProgress }: Props) {
 
   if (loading) {
     return (
-      <Box display="flex" justifyContent="center" alignItems="center" minHeight={240}>
+      <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", minHeight: 240 }}>
         <CircularProgress size={48} color="primary" />
       </Box>
     );
@@ -64,7 +64,7 @@ export function StoriesTab({ stories, loading, read, recordProgress }: Props) {
     const chunks = activeStory.content.split(/(\s+)/);
     return (
       <Box data-testid="story-view">
-        <Stack direction="row" spacing={1} sx={{ mb: 2 }} flexWrap="wrap" useFlexGap>
+        <Stack sx={{ flexDirection: "row", gap: 1, mb: 2, flexWrap: "wrap" }}>
           <Button
             variant="outlined"
             color="inherit"
@@ -103,7 +103,7 @@ export function StoriesTab({ stories, loading, read, recordProgress }: Props) {
             }}
           >
             <Typography sx={{ fontSize: "3rem", lineHeight: 1 }}>{activeStory.emoji || "📖"}</Typography>
-            <Typography variant="h5" fontFamily="var(--font-display)" fontWeight={800}>
+            <Typography variant="h5" sx={{ fontFamily: "var(--font-display)", fontWeight: 800 }}>
               {activeStory.title}
             </Typography>
           </Box>
@@ -198,8 +198,8 @@ export function StoriesTab({ stories, loading, read, recordProgress }: Props) {
                   }}
                 >
                   <Typography sx={{ fontSize: "3rem", lineHeight: 1 }}>{s.emoji || "📖"}</Typography>
-                  <Box flex={1} minWidth={0}>
-                    <Typography variant="h6" fontFamily="var(--font-display)" fontWeight={800} noWrap>
+                  <Box sx={{ flex: 1, minWidth: 0 }}>
+                    <Typography variant="h6" noWrap sx={{ fontFamily: "var(--font-display)", fontWeight: 800 }}>
                       {s.title}
                     </Typography>
                     {done && (
@@ -211,19 +211,19 @@ export function StoriesTab({ stories, loading, read, recordProgress }: Props) {
                   <Typography
                     variant="body2"
                     color="text.secondary"
-                    fontWeight={600}
                     sx={{
                       display: "-webkit-box",
                       WebkitLineClamp: 3,
                       WebkitBoxOrient: "vertical",
                       overflow: "hidden",
+                      fontWeight: 600,
                     }}
                   >
                     {s.content.slice(0, 140)}…
                   </Typography>
-                  <Stack direction="row" alignItems="center" spacing={1} sx={{ mt: 1.5 }} color="primary.main">
+                  <Stack sx={{ flexDirection: "row", alignItems: "center", gap: 1, mt: 1.5, color: "primary.main" }}>
                     <AutoStoriesIcon />
-                    <Typography variant="subtitle2" fontWeight={800}>
+                    <Typography variant="subtitle2" sx={{ fontWeight: 800 }}>
                       Start reading
                     </Typography>
                   </Stack>

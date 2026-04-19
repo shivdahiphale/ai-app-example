@@ -35,7 +35,7 @@ export function WordsTab({ words, loading, learned, recordProgress }: Props) {
 
   if (loading) {
     return (
-      <Box display="flex" justifyContent="center" alignItems="center" minHeight={240}>
+      <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", minHeight: 240 }}>
         <CircularProgress size={48} color="primary" />
       </Box>
     );
@@ -98,7 +98,7 @@ export function WordsTab({ words, loading, learned, recordProgress }: Props) {
                 }}
               >
                 <Typography sx={{ fontSize: "3.5rem", lineHeight: 1 }}>{w.emoji}</Typography>
-                <Typography variant="h4" fontFamily="var(--font-display)" fontWeight={800}>
+                <Typography variant="h4" sx={{ fontFamily: "var(--font-display)", fontWeight: 800 }}>
                   {w.word}
                 </Typography>
                 {w.category && (
@@ -110,10 +110,10 @@ export function WordsTab({ words, loading, learned, recordProgress }: Props) {
                 )}
               </Box>
               <CardContent sx={{ pt: 2 }}>
-                <Typography variant="body1" fontWeight={600} color="text.primary" sx={{ minHeight: 48 }}>
+                <Typography variant="body1" color="text.primary" sx={{ minHeight: 48, fontWeight: 600 }}>
                   {w.meaning}
                 </Typography>
-                <Stack direction={{ xs: "column", sm: "row" }} spacing={1.5} sx={{ mt: 2 }}>
+                <Stack sx={{ flexDirection: { xs: "column", sm: "row" }, gap: 1.5, mt: 2 }}>
                   <Button
                     variant="contained"
                     color="secondary"

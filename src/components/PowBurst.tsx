@@ -11,26 +11,26 @@ export function PowBurst({ show, text = "Nice!" }: { show: boolean; text?: strin
       slots={{ transition: Zoom }}
       maxWidth="xs"
       fullWidth
-      PaperProps={{
-        elevation: 0,
-        sx: {
-          bgcolor: "transparent",
-          boxShadow: "none",
-          overflow: "visible",
-          pointerEvents: "none",
-        },
-      }}
       slotProps={{
+        paper: {
+          elevation: 0,
+          sx: {
+            bgcolor: "transparent",
+            boxShadow: "none",
+            overflow: "visible",
+            pointerEvents: "none",
+          },
+        },
         backdrop: { invisible: true },
       }}
       data-testid="pow-burst"
     >
       <Typography
         variant="h3"
-        fontFamily="var(--font-display)"
-        fontWeight={800}
         align="center"
         sx={{
+          fontFamily: "var(--font-display)",
+          fontWeight: 800,
           fontSize: { xs: "2.75rem", sm: "4rem" },
           color: "warning.main",
           textShadow: (theme) =>
